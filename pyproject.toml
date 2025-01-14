@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xarray-openmdao"
+description = "Load OpenMDAO case data as an xarray dataset"
+readme = "README.md"
+version = "0.0.0"
+dependencies = [
+    "openmdao[all]>=3.0",
+    "xarray>=2025.1.1"
+]
+requires-python = " >= 3.10"
+keywords = [
+    "openmdao",
+    "xarray"
+]
+
+[project.optional-dependencies]
+dev = ["jupyterlab"]
+
+[project.entry-points."xarray.backends"]
+openmdao = "xarray_openmdao:BackendEntrypoint"
